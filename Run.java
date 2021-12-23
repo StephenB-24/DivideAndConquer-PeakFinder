@@ -13,14 +13,15 @@ public class Run
         }
 
         long start =  java.lang.System.currentTimeMillis();
-        System.out.println("1D problem, solved iteratively. The peak found was: " + Solution.FindPeakIterative(testArrayList));
+        System.out.println("1D problem solved iteratively. The peak found was: " + Solution.FindPeakIterative(testArrayList));
         long end =  java.lang.System.currentTimeMillis();
         System.out.println("Time taken: " + (end - start) + " millseconds, or " + (end - start) / 1000.0 + " seconds.");
 
         start =  java.lang.System.currentTimeMillis();
-        System.out.println("1D problem, solved iteratively. The peak found was: " + Solution.FindPeak(testArrayList));
+        System.out.println("1D problem solved with divide-and-conquer. The peak found was: " + Solution.FindPeak(testArrayList));
         end =  java.lang.System.currentTimeMillis();
         System.out.println("Time taken: " + (end - start) + " millseconds, or " + (end - start) / 1000.0 + " seconds.");
+
 
         // 2D Problem
         ArrayList<ArrayList<Integer>> testArrayList1 = new ArrayList<>();
@@ -40,36 +41,7 @@ public class Run
         }
 
         start =  java.lang.System.currentTimeMillis();
-        System.out.println("2D problem peak found: " + Solution.FindPeak2D(testArrayList1));
-        end =  java.lang.System.currentTimeMillis();
-        System.out.println("Time taken: " + (end - start) + " milliseconds, or " + (end - start) / 1000.0 + " seconds.");
-
-        // 3D Problem
-        ArrayList<ArrayList<ArrayList<Integer>>> testArrayList2 = new ArrayList<>();
-        insertValue = 0;
-
-        for (int j = 0; j < 100; j++)
-        {
-            ArrayList<ArrayList<Integer>> tmpYArrayList = new ArrayList<>();
-
-            for (int i = 0; i < 1000; i++)
-            {
-                ArrayList<Integer> tmpZArrayList = new ArrayList<>();
-
-                for (int k = 0; k < 1000; k++)
-                {
-                    tmpZArrayList.add(insertValue);
-                    insertValue++;
-                }
-
-                tmpYArrayList.add(tmpZArrayList);
-            }
-
-            testArrayList2.add(tmpYArrayList);
-        }
-
-        start =  java.lang.System.currentTimeMillis();
-        System.out.println("3D problem peak found: " + Solution.FindPeak3D(testArrayList2));
+        System.out.println("2D problem solved with dive-and-conquer. The peak found was: " + Solution.FindPeak2D(testArrayList1));
         end =  java.lang.System.currentTimeMillis();
         System.out.println("Time taken: " + (end - start) + " milliseconds, or " + (end - start) / 1000.0 + " seconds.");
     }
